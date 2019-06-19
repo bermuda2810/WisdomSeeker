@@ -22,7 +22,7 @@ const app = new Vue({
         addMessage(message) {
             message.user = 'Me'
             this.addMessageToUI(message)
-            axios.post('/wisdomseeker/messages', message).then(response => {
+            axios.post('/messages', message).then(response => {
                 this.addMessageToUI(response.data)
             });
         },

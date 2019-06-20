@@ -15,12 +15,11 @@ const app = new Vue({
     data: {
         messages: []
     },
-    created() {
-    },
 
     methods: {
         addMessage(message) {
-            message.user = 'Me'
+            message.user = 'me'
+            message.is_me = 'true'
             this.addMessageToUI(message)
             axios.post('/messages', message).then(response => {
                 this.addMessageToUI(response.data)
@@ -30,7 +29,8 @@ const app = new Vue({
         addMessageToUI(message) {
             this.messages.push({
                 message: message.message,
-                user: message.user
+                user: message.user,
+                is_me : message.is_me
             });
         }
     }

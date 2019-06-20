@@ -30,7 +30,8 @@
             sendMessage() {
                 this.$emit('messagesent', {
                     user: this.user,
-                    message: this.newMessage
+                    message: this.newMessage,
+                    is_me : true
                 });
                 this.newMessage = ''
             }

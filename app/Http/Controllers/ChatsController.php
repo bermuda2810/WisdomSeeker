@@ -18,6 +18,6 @@ class ChatsController extends Controller
     }
 
     public function sendMessage(Request $request) {
-        return ['message' => 'Chao buoi sang', 'user' => 'Bot'];
+        return ['message' => 'Chao buoi sang', 'user' => 'bot', 'is_me' => false];
     }
 }

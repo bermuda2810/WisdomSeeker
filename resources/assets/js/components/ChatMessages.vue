@@ -1,13 +1,13 @@
 <template>
     <ul class="chat">
         <li class="left clearfix" v-for="message in messages">
-            <div class="chat-body clearfix">
+            <div>
                 <div class="header">
                     <strong class="primary-font">
                         {{ message.user }}
                     </strong>
                 </div>
-                <p>
+                <p v-bind:class="[message.is_me ? 'me' : 'bot']">
                     {{ message.message }}
                 </p>
             </div>
@@ -17,6 +17,6 @@
 
 <script>
     export default {
-        props: ['messages']
+        props: ['messages'],
     };
 </script>

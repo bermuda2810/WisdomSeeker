@@ -1,9 +1,7 @@
 <template>
-    <ul class="chat">
-        <li class="left clearfix" v-for="message in messages">
-                <p v-bind:class="[message.is_me ? 'me' : 'bot']">
-                    {{ message.user }} : {{ message.message }}
-                </p>
+    <ul id="messages" class="chat">
+        <li v-for="message in messages" v-bind:class="[message.is_me ? 'me' : 'bot']">
+            {{ message.user }} : {{ message.message }}
         </li>
     </ul>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div class="input-group">
-        <input id="btn-input"
+        <input id="m"
                type="text"
                name="message"
                class="form-control

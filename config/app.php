@@ -228,4 +228,6 @@ return [
 
     ],
 
+    'translator_api' => env('TRANSLATOR_API', 'https://wisdom-seeker-nlp.herokuapp.com/api/translate'),
+
 ];

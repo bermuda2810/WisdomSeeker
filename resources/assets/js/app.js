@@ -21,7 +21,7 @@ const app = new Vue({
             message.user = 'me'
             message.is_me = 'true'
             this.addMessageToUI(message)
-            axios.post('/messages', message).then(response => {
+            axios.post('/wisdomseeker/messages', message).then(response => {
                 this.addMessageToUI(response.data)
             });
         },

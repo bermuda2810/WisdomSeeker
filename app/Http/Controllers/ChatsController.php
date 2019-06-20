@@ -29,7 +29,7 @@ class ChatsController extends Controller
     {
         $url = config('app.translator_api');
         $params = [
-            "input"=> $input,
+            "input"=> $input['message'],
         ];
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

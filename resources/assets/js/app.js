@@ -18,6 +18,9 @@ const app = new Vue({
 
     methods: {
         addMessage(message) {
+            if (this.isBlank(message.message)) {
+                return
+            }
             message.user = 'me'
             message.is_me = 'true'
             this.addMessageToUI(message)
@@ -32,6 +35,10 @@ const app = new Vue({
                 user: message.user,
                 is_me : message.is_me
             });
+        },
+
+        isBlank(str) {
+            return (!str || /^\s*$/.test(str));
         }
     }
 });

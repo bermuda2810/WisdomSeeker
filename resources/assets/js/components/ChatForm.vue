@@ -8,7 +8,7 @@
                v-model="newMessage"
                @keyup.enter="sendMessage">
         <span class="input-group-btn">
-            <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage">
+            <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage" :disabled="submitted">
                 Send
             </button>
         </span>
@@ -21,12 +21,14 @@
 
         data() {
             return {
-                newMessage: ''
+                newMessage: '',
+                submitted: false
             }
         },
 
         methods: {
             sendMessage() {
+                this.submitted = true
                 this.$emit('messagesent', {
                     user: this.user,
                     message: this.newMessage,

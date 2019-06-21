@@ -1,5 +1,5 @@
 <template>
-    <ul id="messages" class="chat">
+    <ul id="messages">
         <li v-for="message in messages" v-bind:class="[message.is_me ? 'me' : 'bot']">
             {{ message.message }}
         </li>

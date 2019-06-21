@@ -12,6 +12,12 @@
                 Send
             </button>
         </span>
+        <input id="checkbox"
+               type="checkbox"
+               name="checkbox"
+               class="form-control
+               input-sm"
+               v-model="submittted">
     </div>
 
 </template>
@@ -29,6 +35,7 @@
         methods: {
             sendMessage() {
                 this.submitted = true
+                console.log(this.submitted)
                 this.$emit('messagesent', {
                     user: this.user,
                     message: this.newMessage,

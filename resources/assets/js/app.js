@@ -13,7 +13,8 @@ Vue.component('chat-form', require('./components/ChatForm.vue'));
 const app = new Vue({
     el: '#app',
     data: {
-        messages: []
+        messages: [],
+        submitted: false
     },
 
     methods: {
@@ -21,10 +22,12 @@ const app = new Vue({
             if (this.isBlank(message.message)) {
                 return
             }
+            this.submitted = true
             message.user = 'me'
             message.is_me = 'true'
             this.addMessageToUI(message)
             axios.post('/messages', message).then(response => {
+                this.submitted = false
                 this.addMessageToUI(response.data)
             });
         },

@@ -6,18 +6,13 @@
                class="form-control
                input-sm"
                v-model="newMessage"
-               @keyup.enter="sendMessage">
+               @keyup.enter="sendMessage"
+               :disabled="submitted">
         <span class="input-group-btn">
             <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage" :disabled="submitted">
                 Send
             </button>
         </span>
-        <input id="checkbox"
-               type="checkbox"
-               name="checkbox"
-               class="form-control
-               input-sm"
-               v-model="submittted">
     </div>
 
 </template>
@@ -25,17 +20,16 @@
 <script>
     export default {
 
+        props: ['submitted'],
+
         data() {
             return {
-                newMessage: '',
-                submitted: false
+                newMessage: ''
             }
         },
 
         methods: {
             sendMessage() {
-                this.submitted = true
-                console.log(this.submitted)
                 this.$emit('messagesent', {
                     user: this.user,
                     message: this.newMessage,

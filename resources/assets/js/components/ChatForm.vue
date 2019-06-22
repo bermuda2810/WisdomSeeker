@@ -1,19 +1,19 @@
 <template>
-    <div class="input-group">
+    <form class="input-group">
         <input id="m"
                type="text"
                name="message"
                class="form-control
                input-sm"
                v-model="newMessage"
-               @keyup.enter="sendMessage"
+               @keydown.enter.prevent="sendMessage"
                :disabled="submitted">
         <span class="input-group-btn">
             <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage" :disabled="submitted">
                 Send
             </button>
         </span>
-    </div>
+    </form>
 
 </template>
 

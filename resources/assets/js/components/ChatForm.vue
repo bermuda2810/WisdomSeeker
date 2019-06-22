@@ -1,18 +1,20 @@
 <template>
     <div class="input-group">
-        <input id="m"
-               type="text"
-               name="message"
-               class="form-control
-               input-sm"
-               v-model="newMessage"
-               @keyup.enter="sendMessage"
-               :disabled="submitted">
-        <span class="input-group-btn">
-            <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage" :disabled="submitted">
-                Send
-            </button>
-        </span>
+        <form>
+            <input id="m"
+                   type="text"
+                   name="message"
+                   class="form-control
+                   input-sm"
+                   v-model="newMessage"
+                   @keyup.enter="sendMessage"
+                   :disabled="submitted">
+            <span class="input-group-btn">
+                <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage" :disabled="submitted">
+                    Send
+                </button>
+            </span>
+         </form>
     </div>
 
 </template>

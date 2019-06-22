@@ -9,7 +9,7 @@
                @keydown.enter.prevent="sendMessage"
                :disabled="submitted">
         <span class="input-group-btn">
-            <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage" :disabled="submitted">
+            <button class="btn btn-primary btn-sm" id="btn-chat" @click.prevent="sendMessage" :disabled="submitted">
                 Send
             </button>
         </span>

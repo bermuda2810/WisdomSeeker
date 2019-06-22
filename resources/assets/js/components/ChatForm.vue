@@ -1,5 +1,5 @@
 <template>
-    <form class="input-group">
+    <div class="input-group">
         <input id="m"
                type="text"
                name="message"
@@ -13,7 +13,7 @@
                 Send
             </button>
         </span>
-    </form>
+    </div>
 
 </template>
 

@@ -63,6 +63,21 @@
             margin-bottom: 40px
         }
 
+        .input-group-btn:last-child>.btn {
+            background-color: #000;
+            border: none;
+            padding: 6px 12px;
+        }
+
+        .input-group-btn {
+            width: 3%;
+        }
+
+        .input-group .form-control {
+            border: 0px;
+            margin-right: 0px;
+        }
+
     </style>
 </head>
 <body>

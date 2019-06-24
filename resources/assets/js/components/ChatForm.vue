@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form action>
         <input id="m"
                type="text"
                name="message"

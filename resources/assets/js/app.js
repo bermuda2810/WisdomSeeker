@@ -22,14 +22,21 @@ const app = new Vue({
             if (this.isBlank(message.message)) {
                 return
             }
-            this.submitted = true
+//            this.submitted = true
             message.user = 'me'
             message.is_me = 'true'
             this.addMessageToUI(message)
-            axios.post('/messages', message).then(response => {
-                this.submitted = false
-                this.addMessageToUI(response.data)
-            });
+            fakeResponse = {
+                message: 'xin chào',
+                user: 'bot',
+                is_me: false
+
+            }
+            this.addMessageToUI(fakeResponse)
+//            axios.post('/messages', message).then(response => {
+//                this.submitted = false
+//                this.addMessageToUI(response.data)
+//            });
         },
 
         addMessageToUI(message) {

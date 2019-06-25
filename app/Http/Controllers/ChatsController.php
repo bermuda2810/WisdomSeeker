@@ -20,9 +20,9 @@ class ChatsController extends Controller
 
     public function sendMessage(Request $request) {
         $input = $request->all();
-//        $output = $this->requestTranslate($input);
-//        $value = isset($output) ? $output['output'] : 'Unknown';
-        return ['message' => 'Xin chào', 'user' => 'bot', 'is_me' => false];
+        $output = $this->requestTranslate($input);
+        $value = isset($output) ? $output['output'] : 'Unknown';
+        return ['message' => $value, 'user' => 'bot', 'is_me' => false];
     }
 
     private function requestTranslate($input)
